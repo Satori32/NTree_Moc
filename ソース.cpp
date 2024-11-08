@@ -41,14 +41,27 @@ struct NTreeNode {
 
 	Vector<Node> Nodes;
 };
+
+struct ConstNumberHolder {
+	const size_t Value;
+};
+
 template<size_t N>
+ConstNumberHolder ConstructConstNumberHolder<N>() {
+	ConstNumberHolder C = { N };
+
+	return C;
+}
+
 struct NTreeNodeII {
 	//type T = NULL;
 	typedef void* T;
 	//type Type = T;
 	T Value;
 
-	FixedVector<Node,N> Nodes;
+	ConstNumberHolder C;
+
+	FixedVector<Node,C.Value> Nodes;
 };
 struct Tree2Node {
 	//type T = NULL;
