@@ -24,13 +24,22 @@ struct TreeSystem {
 	TypeAndValue Root;
 };
 
+struct NodeParam {//Plz Rewrite this.
+	void* Weight = 0;
+};
+
+struct Node {
+	TypeAndValue Next;
+	NodeParam Node;
+};
+
 struct NTreeNode {
 	//type T = NULL;
 	typedef void* T;
 	//type Type = T;
 	T Value;
 
-	Vector<TypeAndValue> Nodes;
+	Vector<Node> Nodes;
 };
 template<size_t N>
 struct NTreeNodeII {
@@ -39,7 +48,7 @@ struct NTreeNodeII {
 	//type Type = T;
 	T Value;
 
-	FixedVector<TypeAndValue,N> Nodes;
+	FixedVector<Node,N> Nodes;
 };
 struct Tree2Node {
 	//type T = NULL;
@@ -47,8 +56,8 @@ struct Tree2Node {
 	//type Type = T;
 	T Value;
 
-	TypeAndValue Right;
-	TypeAndValue Left;
+	Node Right;
+	Node Left;
 };
 struct Tree2NodeII {
 	//type T = NULL;
@@ -56,7 +65,7 @@ struct Tree2NodeII {
 	//type Type = T;
 	T Value;
 
-	FixedVector<TypeAndValue,2> Nodes;
+	FixedVector<Node,2> Nodes;
 };
 struct Tree8Node {
 	//type T = NULL;
@@ -64,14 +73,14 @@ struct Tree8Node {
 	//type Type = T;
 	T Value;
 
-	TypeAndValue One;
-	TypeAndValue Tow;
-	TypeAndValue Three;
-	TypeAndValue Fore;
-	TypeAndValue Five;
-	TypeAndValue Six;
-	TypeAndValue Seven;
-	TypeAndValue Eight;
+	Node One;
+	Node Tow;
+	Node Three;
+	Node Fore;
+	Node Five;
+	Node Six;
+	Node Seven;
+	Node Eight;
 };
 struct Tree8NodeII {
 	//type T = NULL;
@@ -79,7 +88,7 @@ struct Tree8NodeII {
 	//type Type = T;
 	T Value;
 
-	FixedVector<TypeAndValue,8> Nodes;
+	FixedVector<Node,8> Nodes;
 };
 struct Tree21Node {
 	//type T = NULL;
@@ -87,7 +96,7 @@ struct Tree21Node {
 	//type Type = T;
 	T Value;
 
-	FixedVector<TypeAndValue,21> Nodes;
+	FixedVector<Node,21> Nodes;
 };
 struct Tree82Node {
 	//type T = NULL;
@@ -95,5 +104,5 @@ struct Tree82Node {
 	//type Type = T;
 	T Value;
 
-	FixedVector<TypeAndValue,82> Nodes;
+	FixedVector<Node,82> Nodes;
 };
